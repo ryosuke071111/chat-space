@@ -31,7 +31,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, index: true, foreign_key: true|
-|group_id|integer|null: false, index: true, foreign_key:true|
+|group_id|integer|null: false, index: true, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -43,8 +43,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |content|text|null: false|
-|user_id|integer|null: false, index: true, foreign_key:true|
-|content_id|integer|null: false, index: true, foreign_key:true|
+|user_id|integer|null: false, index: true, foreign_key: true|
+|content_id|integer|null: false, index: true, foreign_key: true|
 
 ### Association
 - belongs_to :user
