@@ -44,6 +44,7 @@
 |content|text|null: false|
 |image|string|      |
 |user_id|integer|null: false, index: true, foreign_key: true|
+|group_id|integer|null: false, index: true, foreign_key: true|
 
 
 ### Association
