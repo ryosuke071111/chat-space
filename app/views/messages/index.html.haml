@@ -1,0 +1,85 @@
+!!!
+%html
+ %head
+  %meta{charaset: "utf-8"}
+ %body
+ %header
+  チャットグループが作成されました。
+
+  #contents
+   //左のメニュー
+   .left-content
+    //左メニューヘッダー
+    .left-content__header
+     .left-content__content-box
+      %h3.left-content__username
+       桑原亮介
+      %ul.left-content__header-list
+       %li.left-content__header-list__list
+        = link_to messages_path do
+         %i.fa.fa-edit.font-color
+       %li.left-content__header-list__list
+        = link_to messages_path do
+         %i.fa.fa-cog.font-color
+    //グループ一覧
+    .left-content__group-index
+     .left-content__content-box
+      .left-content__group-index__box
+       %p.group-name sample
+       %p.chat-heading Hello World!
+
+   //右のチャット画面
+   .right-content
+    .right-content__container
+     //チャット画面ヘッダー
+     .right-content__container__header
+      .right-content__container__header__left-item
+       %h3 サンプルグループ
+       %p Member : 桑原亮介
+      .right-content__container__header__right-item
+       = link_to "Edit", messages_path, class: "edit-btn btn"
+     //チャット画面内容
+     .right-content__container__messages
+      .right-content__container__messages__box
+       .right-content__container__messages__box__username
+        %h4  ryosuke kuwabara
+       .right-content__container__messages__box__time
+        %p 2018-05-04
+       .right-content__container__messages__box__content
+        %p お腹すいた
+
+        .right-content__container__messages__box
+       .right-content__container__messages__box__username
+        %h4  ryosuke kuwabara
+       .right-content__container__messages__box__time
+        %p 2018-05-04
+       .right-content__container__messages__box__content
+        %p かまぼこ食べた
+
+       .right-content__container__messages__box
+       .right-content__container__messages__box__username
+        %h4  ryosuke kuwabara
+       .right-content__container__messages__box__time
+        %p 2018-05-04
+       .right-content__container__messages__box__content
+        %p 腹一杯になった
+
+        .right-content__container__messages__box
+       .right-content__container__messages__box__username
+        %h4  ryosuke kuwabara
+       .right-content__container__messages__box__time
+        %p 2018-05-04
+       .right-content__container__messages__box__content
+        %p ページ作ってる
+     //送信ボックス
+     .right-content__container__input
+      %form
+       %input.text-box.btn{:type => "text", :placeholder => "type a message"}
+       %label
+        %input.file-btn.btn{:type => "file", :style => "display:none;"}
+        %i.fa.fa-image
+      %input.submit.btn{:type => "submit", :value => "send"}
+
+
+
+

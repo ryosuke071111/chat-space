@@ -1,0 +1,218 @@
+
+* {
+　box-sizing: border-box;
+}
+
+header{
+  background-color: #38AEF0;
+  height:17px
+
+}
+
+#contents{
+  height: 900px;
+}
+
+
+.left-content{
+  background-color: #2f3e51;
+  color: white;
+  width: 300px;
+  height: 100%; //仮置き
+  float: left;
+
+  &__header {
+  background-color: #253141;
+  height: 97px; //仮置き
+  width: 300px;
+  }
+
+    &__content-box {
+    padding-left: 20px;
+    padding-right: 20px;
+
+     h3 {
+      font-weight: bold;
+      font-size :16px;
+      float : left;
+      line-height: 97px;
+    }
+
+     ul {
+      float: right;
+      line-height: 97px;
+
+      .font-color {
+      color: white;
+     }
+
+      li {
+      float :left;
+      color: white;
+     }
+    }
+  }
+
+
+  &__group-index {
+    &__box{
+      padding: 20px 0px;
+
+        .group-name{
+          font-size: 15px;
+          padding-bottom: 5px;
+        }
+        .chat-heading{
+          font-size: 11px;
+        }
+      }
+    }
+}
+
+.right-content{
+  background-color: #FFF;
+  float: left;
+  width: calc(100% - 300px);
+
+
+  &__container{
+  padding-left: 40px;
+  padding-right: 40px;
+
+   &__header {
+    height: 97px;
+    border-bottom: solid #eee 1px;
+    margin-bottom:6px;
+
+    &__left-item{
+      float: left;
+
+     h3 {
+      line-height: 20px;
+      color :#333333;
+      padding-top: 35px;
+    }
+
+     p {
+      font-size: 12px;
+      color: #999999;
+      padding: 15px 0px;
+    }
+     }
+
+    &__right-item{
+      float: right;
+      line-height: 97px;
+
+     .edit-btn {
+      height: 40px;
+      padding: 10px 20px;
+      margin:28px 0px;
+      color:#38AEF0;
+      border: solid #38AEF0 1px;
+      text-decoration: none;
+    }
+
+  }
+
+}
+   &__messages {
+  height:700px;
+
+     &__box {
+      padding-top: 40px;
+
+      &__username {
+        float: left;
+        line-height: 10px;
+        padding-right: 10px;
+
+        h4 {
+        font-size:16px;
+        font-weight: bold;
+        color: #434A54;
+        }
+      }
+
+      &__time {
+        float: left;
+        font-size: 12px;
+        color: #999;
+        line-height: 10px;
+
+      }
+
+      &__content {
+        clear: both;
+        padding-top: 10px;
+        font-size: 14px;
+        color: #434A54
+
+      }
+    }
+
+
+}
+
+
+
+
+
+   &__input{
+    padding: 20px 0px;
+    height: 50px;
+    background-color: #DDDDDD;
+
+    .text-box{
+      float: left;
+      height: 50px;
+      width:600px;
+
+      border:none;
+      line-height: 50px;
+
+
+    }
+
+    .file-btn{
+      float: left;
+
+    }
+
+    .fa-image{
+      padding-right: 25px;
+      height: 50px;
+      background-color: white;
+      line-height: 50px;
+    }
+
+    .submit{
+      float: left;
+      float: right;
+    }
+
+}
+
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
