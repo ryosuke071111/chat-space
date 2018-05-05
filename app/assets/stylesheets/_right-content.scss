@@ -55,7 +55,7 @@
       padding: 46px 40px 0px;
     }
 
-     &__box {
+    &__box {
       padding-bottom: 40px;
 
       &__username {
@@ -83,14 +83,9 @@
         padding-top: 10px;
         font-size: 14px;
         color: #434A54
-
       }
     }
 }
-
-
-
-
 
    &__input{
     .text-box{
@@ -129,8 +124,8 @@
 }
 
 .right-content__header__container, .right-content__messages__container{
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: $right-content-padding-left;
+  padding-right: $right-content-padding-right;
 }
 
 .text-box-input-placeholder{

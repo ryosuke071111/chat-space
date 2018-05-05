@@ -25,8 +25,10 @@
     .left-content__group-index
      .left-content__content-box
       .left-content__group-index__box
-       %p.group-name sample
-       %p.chat-heading Hello World!
+       = render partial:"groups", locals:{groupname:"sample", groupheading: "aaaaaaa"}
+       = render partial:"groups", locals:{groupname:"sample", groupheading: "aaaaaaa"}
+       = render partial:"groups", locals:{groupname:"sample", groupheading: "aaaaaaa"}
+       = render partial:"groups", locals:{groupname:"sample", groupheading: "aaaaaaa"}
 
    //右のチャット画面
    .right-content
@@ -43,36 +45,15 @@
      .right-content__messages
       .right-content__messages__container
        .right-content__messages__box
-        .right-content__messages__box__username
-         %h4  ryosuke kuwabara
-        .right-content__messages__box__time
-         %p 2018-05-04
-        .right-content__messages__box__content
-         %p お腹すいた
+        = render partial:"message", locals:{username:"ryosuke kuwabara", time: "2018/05/04", message:"お腹すいた"}
 
-         .right-content__messages__box
-        .right-content__messages__box__username
-         %h4  ryosuke kuwabara
-        .right-content__messages__box__time
-         %p 2018-05-04
-        .right-content__messages__box__content
-         %p かまぼこ食べた
+        = render partial:"message", locals:{username:"ryosuke kuwabara", time: "2018/05/04", message:"昼ごはん食べた"}
 
-        .right-content__messages__box
-        .right-content__messages__box__username
-         %h4  ryosuke kuwabara
-        .right-content__messages__box__time
-         %p 2018-05-04
-        .right-content__messages__box__content
-         %p 腹一杯になった
+        = render partial:"message", locals:{username:"ryosuke kuwabara", time: "2018/05/04", message:"水飲んだ"}
 
-         .right-content__messages__box
-        .right-content__messages__box__username
-         %h4  ryosuke kuwabara
-        .right-content__messages__box__time
-         %p 2018-05-04
-        .right-content__messages__box__content
-         %p ページ作ってる
+        = render partial:"message", locals:{username:"ryosuke kuwabara", time: "2018/05/04", message:"満腹"}
+
+        = render partial:"message", locals:{username:"ryosuke kuwabara", time: "2018/05/04", message:"作業再開"}
      //送信ボックス
      .right-content__input
       %form
