@@ -1,4 +1,33 @@
 @import "./reset";
 @import "./variable";
 @import "./font-awesome";
+@import "./left-content";
+@import "./right-content";
 
+* {
+  box-sizing: border-box;
+}
+
+
+header{
+  background-color: #38AEF0;
+  height:17px;
+}
+
+h5 {
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    line-height: 17px;
+  }
+
+#contents{
+   height: 100vh;
+}
+
+form{
+  height: 90px;
+  background-color: #DDDDDD;
+  padding: 20px 50px 20px 40px;
+
+}
