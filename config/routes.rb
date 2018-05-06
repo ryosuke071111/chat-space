@@ -6,5 +6,4 @@ Rails.application.routes.draw do
   get 'group/new'
 
 
-
 end
