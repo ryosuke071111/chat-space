@@ -26,7 +26,8 @@
      .left-content__content-box
       .left-content__group-index__box
        - current_user.groups.each do |group|
-        = render partial:"groups", locals:{group:group}
+        =link_to group_messages_path(group) do
+         = render partial:"groups", locals:{group:group}
    //右のチャット画面
    .right-content
     .right-content_container
@@ -59,8 +60,3 @@
         %input.file-btn.btn{:type => "file", :style => "display:none;"}
         %i.fa.fa-image
        = submit_tag "send", :class => "submit"
-
-
-
-
-
