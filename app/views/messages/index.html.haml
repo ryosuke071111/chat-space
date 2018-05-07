@@ -16,7 +16,7 @@
        = current_user.name
       %ul.left-content__header-list
        %li.left-content__header-list__list
-        = link_to edit_user_path(current_user) do
+        = link_to new_group_path do
          %i.fa.fa-edit.font-color
        %li.left-content__header-list__list
         = link_to edit_user_path(current_user) do
@@ -25,11 +25,8 @@
     .left-content__group-index
      .left-content__content-box
       .left-content__group-index__box
-       = render partial:"groups", locals:{groupname:"sample", groupheading: "aaaaaaa"}
-       = render partial:"groups", locals:{groupname:"sample", groupheading: "aaaaaaa"}
-       = render partial:"groups", locals:{groupname:"sample", groupheading: "aaaaaaa"}
-       = render partial:"groups", locals:{groupname:"sample", groupheading: "aaaaaaa"}
-
+       - current_user.groups.each do |group|
+        = render partial:"groups", locals:{group:group}
    //右のチャット画面
    .right-content
     .right-content_container
@@ -40,7 +37,7 @@
         %h3 サンプルグループ
         %p Member : 桑原亮介
        .right-content__header__right-item
-        = link_to "Edit", edit_group_path, class: "edit-btn btn"
+        = link_to "Edit", edit_group_path(@group.id), class: "edit-btn btn"
      //チャット画面内容
      .right-content__messages
       .right-content__messages__container
@@ -56,7 +53,7 @@
         = render partial:"message", locals:{username:"ryosuke kuwabara", time: "2018/05/04", message:"作業再開"}
      //送信ボックス
      .right-content__input
-      %form
+      %form.message-box
        %input.text-box.btn{:type => "text", :placeholder => "type a message"}
        %label
         %input.file-btn.btn{:type => "file", :style => "display:none;"}
