@@ -1,4 +1,4 @@
-class GroupController < ApplicationController
+class GroupsController < ApplicationController
 
   def new
   end
@@ -14,7 +14,7 @@ class GroupController < ApplicationController
   def update
     group = Group.find(params[:id])
     if group_user.user_id == current.user.id
-      group.update(group_params
+      group.update(group_params)
     end
   end
 
@@ -25,4 +25,3 @@ private
 end
 
 
-end
