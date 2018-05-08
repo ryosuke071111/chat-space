@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180507084634) do
+ActiveRecord::Schema.define(version: 20180507143441) do
 
   create_table "group_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "group_id"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20180507084634) do
     t.string   "image"
     t.integer  "user_id",                  null: false
     t.integer  "group_id",                 null: false
+    t.index ["group_id"], name: "fk_rails_841b0ae6ac", using: :btree
+    t.index ["user_id"], name: "fk_rails_273a25a7a6", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -57,4 +59,6 @@ ActiveRecord::Schema.define(version: 20180507084634) do
 
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
+  add_foreign_key "messages", "groups"
+  add_foreign_key "messages", "users"
 end

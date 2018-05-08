@@ -19,6 +19,6 @@
    .left-content__content-box
     .left-content__group-index__box
      - current_user.groups.each do |group|
-      =link_to group_messages_path(group) do
+      =link_to group_messages_path(group.id) do
        = render partial:"messages/groups", locals:{group:group}
 
