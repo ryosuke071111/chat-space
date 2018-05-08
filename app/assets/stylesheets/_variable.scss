@@ -8,10 +8,11 @@ $left-content-padding-left: 20px;
 $left-content-padding-right: 20px;
 
 
+
 @mixin clearfix {
   content: "";
   clear: both;
-  display: inline-block;
+  display: none;
 }
 
 
