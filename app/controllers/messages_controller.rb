@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
     @group = Group.find(params[:group_id])
     @message = Message.new
     @messages = @group.messages.includes(:user)
+    @users =User.joins(:groups).merge(Group.where(id: params[:group_id]))
 
   end
 
