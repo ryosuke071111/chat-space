@@ -31,7 +31,7 @@
       %h3 @group.name
       %p Member : 桑原亮介
      .right-content__header__right-item
-      = link_to "Edit", edit_group_path(@groups.ids), class: "edit-btn btn"
+      = link_to "Edit", edit_group_path(@group.id), class: "edit-btn btn"
    //チャット画面内容
    .right-content__messages.clearfix
     .right-content__messages__container
@@ -41,9 +41,12 @@
 
    //送信ボックス
    .right-content__input
-    %form.message-box
-     %input.text-box.btn{:type => "text", :placeholder => "type a message"}
-     %label
-      %input.file-btn.btn{:type => "file", :style => "display:none;"}
-      %i.fa.fa-image
-     = submit_tag "send", :class => "submit"
+    .form.message-box
+     = form_for [@group, @message] do |f|
+      = f.text_field :content, class: "text-box btn", placeholder: "type a message"
+      .form__mask
+       = f.label :image, class: "form__mask__image" do
+        %i.fa.fa-image
+        =f.file_field :image, style: "display:none;"
+       = f.submit "Send", class: "submit"
+

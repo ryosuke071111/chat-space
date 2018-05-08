@@ -5,7 +5,7 @@
   %p #{message.created_at}
  .right-content__messages__box__content
   %p #{message.content}
-
+  = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
 
 
 
