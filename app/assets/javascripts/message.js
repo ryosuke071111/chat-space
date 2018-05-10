@@ -1,8 +1,8 @@
 $(function(){
   function buildHTML(message){
-    var img = "";
-    if (message.img){
-      img = `<img src = ${message.image} class: "right-content__messages__box__content-img">`
+     var img =" ";
+    if (message.image){
+      var img = `<img src = ${message.image} class: "lower-message_image">`
     }
     var html = `<div class="right-content__messages__box">
                   <div class="right-content__messages__box__username">
@@ -13,14 +13,13 @@ $(function(){
                   </div>
                   <div class="right-content__messages__box__content">
                     <p>${message.content}</p>
-                    ${img}
+                       ${img}
                    </div>
                 </div>
 `
     return html;
   }
   $("#new_message").on("submit", function(e){
-    console.log("aaa")
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
@@ -38,9 +37,11 @@ $(function(){
       $('.right-content__messages__container').append(html)
       $('.right-content__messages__container').animate({scrollTop: $('.right-content__messages__container')[0].scrollHeight},'fasts')
       $('.submit').prop("disabled", false)
+      $('#message_content').val("");
+      $('#message_image').val("");
     })
-    .fail(function(){
-      alert('error');
+  .fail(function(){
+    alert('error');
 
     })
   })
