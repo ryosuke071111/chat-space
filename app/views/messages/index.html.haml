@@ -31,7 +31,7 @@
        = @group.name
       %h4.each-member Member :
       .right-content__header__left-item__members
-       -@users.each do |user|
+       -@group.users.each do |user|
         .each-member
          =user.name
      .right-content__header__right-item
