@@ -44,8 +44,8 @@
        = render partial:"message", locals:{message: message}
    //送信ボックス
    .right-content__input
-    .form.message-box
-     = form_for [@group, @message] do |f|
+    .message-box
+     = form_for [@group, @message], html: {class: 'form'} do |f|
       = f.text_field :content, class: "text-box btn", placeholder: "type a message"
       .form__mask
        = f.label :image, class: "form__mask__image" do
