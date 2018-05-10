@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(message){
-  var img =" ";
-  if (message.image){
+    var img ="";
+    if (message.image){
     var img = `<img src = ${message.image} class: "lower-message_image">`
     }
     var html = `<div class=" right-content__messages__box">
