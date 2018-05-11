@@ -19,12 +19,12 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html
       format.json
+    end
   end
 
   private
+    def user_params
+      params.require(:user).permit(:name, :email)
+    end
 
-  def user_params
-    params.require(:user).permit(:name, :email)
-  end
-end
 end
