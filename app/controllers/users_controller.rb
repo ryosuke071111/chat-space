@@ -14,9 +14,18 @@ class UsersController < ApplicationController
     end
   end
 
-  private
-
-  def user_params
-    params.require(:user).permit(:name, :email)
+  def index
+    @users = User.where("name LIKE(?)", "%#{params[:keyword]}%")
+    @users.delete(current_user.id)
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
+
+  private
+    def user_params
+      params.require(:user).permit(:name, :email)
+    end
+
 end
