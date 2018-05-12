@@ -39,8 +39,7 @@
    //チャット画面内容
    .right-content__messages.clearfix
     .right-content__messages__container
-     -@messages.each do |message|
-      = render partial:"message", locals:{message: message}
+     = render @messages
    //送信ボックス
    .right-content__input
     .message-box

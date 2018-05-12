@@ -44,23 +44,23 @@ $(function(){
     })
   })
 
+  var last_message_id = $(".right-content__messages__box").last().data("messageId");
   var interval = setInterval(function(){
-    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+    if (location.pathname.match(/\/groups\/\d+\/messages/)){
     $.ajax({
-      url: location.href,
+      url: location.pathname,
+      data: {id: last_message_id},
       type: "GET",
       dataType: "json"
     })
     .done(function(json){
-      console.log(json)
-      var id = $(".right-content__messages__box").last().data("messageId");
+      if (json.length !== 0){
       var insertHTML = "";
-      json.messages.forEach(function(message){
-        if(message.id > id){
-        insertHTML += buildHTML(message);
-      }
+      json.forEach(function(message){
+        insertHTML = buildHTML(message);
+        $(".right-content__messages__container").append(insertHTML);
     });
-    $(".right-content__messages__container").append(insertHTML);
+  }
     })
     .fail(function(json){
       alert("自動更新に失敗しました");
