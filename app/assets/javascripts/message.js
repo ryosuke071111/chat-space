@@ -45,23 +45,22 @@ $(function(){
   })
 
   var interval = setInterval(function(){
-    if (window.location.href.match(/\/groups\/\d+\/messages/)){ //リンクが今のリンクと会ってたら
-    $.ajax({  //非同期通信データ取得
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+    $.ajax({
       url: location.href,
       type: "GET",
       dataType: "json"
     })
     .done(function(json){
       console.log(json)
-      var id = $(".right-content__messages__box").last().data("messageId"); //チャットのデータ取得
-      console.log(id)
-      var insertHTML = ""; //元となる関数定義
-      json.messages.forEach(function(message){ //指定機関で取得したjsonを配列で指定させる
+      var id = $(".right-content__messages__box").last().data("messageId");
+      var insertHTML = "";
+      json.messages.forEach(function(message){
         if(message.id > id){
-        insertHTML += buildHTML(message); //id降順で表示させる（新しいメッセージのかたまいr）
+        insertHTML += buildHTML(message);
       }
     });
-    $(".right-content__messages__container").append(insertHTML); //塊を既存のタイムラインに添える
+    $(".right-content__messages__container").append(insertHTML);
     })
     .fail(function(json){
       alert("自動更新に失敗しました");
