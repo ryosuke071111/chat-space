@@ -4,7 +4,10 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
-
+    respond_to do |format|
+      format.html
+      format.json { @additional_messages = @messages.where("id > ?", params[:id])}
+    end
   end
 
   def create
@@ -21,9 +24,6 @@ class MessagesController < ApplicationController
      end
   end
 
-
-
-
   private
     def message_params
     params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
@@ -32,4 +32,4 @@ class MessagesController < ApplicationController
     def set_group
       @group = Group.find(params[:group_id])
     end
-end
+  end

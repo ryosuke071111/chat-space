@@ -4,7 +4,7 @@ $(function(){
     if (message.image){
     var img = `<img src = ${message.image} class: "lower-message_image">`
     }
-    var html = `<div class=" right-content__messages__box">
+    var html = `<div class=" right-content__messages__box data-message-id="${message.id}">
                   <div class= "right-content__messages__box__username">
                     <h4>${message.user_name}</h4>
                    </div>
@@ -43,4 +43,29 @@ $(function(){
     alert('error');
     })
   })
+
+  var last_message_id = $(".right-content__messages__box").last().data("messageId");
+  var interval = setInterval(function(){
+    if (location.pathname.match(/\/groups\/\d+\/messages/)){
+    $.ajax({
+      url: location.pathname,
+      data: {id: last_message_id},
+      type: "GET",
+      dataType: "json"
+    })
+    .done(function(json){
+      if (json.length !== 0){
+      var insertHTML = "";
+      json.forEach(function(message){
+        insertHTML = buildHTML(message);
+        $(".right-content__messages__container").append(insertHTML);
+    });
+  }
+    })
+    .fail(function(json){
+      alert("自動更新に失敗しました");
+   });
+   } else{
+    clearInterval(interval);
+  }}, 5000 );
 });
