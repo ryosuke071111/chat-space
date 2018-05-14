@@ -18,7 +18,7 @@ $(function() {
     return html;
   }
   //インクリメンタルサーチ
-  $("#user-search-field").on("keyup", function() {
+$("#user-search-field").on("keyup", function() {
     $("#user-search-result").empty();
     var input = $("#user-search-field").val();
     $.ajax({
@@ -38,6 +38,7 @@ $(function() {
       alert("ユーザー検索に失敗しました");
     })
   })
+
   //メンバー追加
   $("#user-search-result").on("click",".chat-group-user__btn--add", function() {
     var id = $(this).attr("data-user-id");
