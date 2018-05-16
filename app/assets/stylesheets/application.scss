@@ -1,12 +1,12 @@
-@import "./reset";
-@import "./variable";
-@import "./font-awesome";
-@import "./left-content";
-@import "./right-content";
+@import "./config/variable";
+@import "./config/colors";
+@import "./override/reset";
+@import "./modules/left-content";
+@import "./modules/right-content";
+@import "./modules/flash";
 @import "./main-parts";
 @import "./user";
-@import "./colors";
-@import "./flash";
 @import "./group";
+@import "./font-awesome";
 
 
