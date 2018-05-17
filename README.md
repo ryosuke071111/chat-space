@@ -1,3 +1,7 @@
+使用イメージGIF:
+
+https://gyazo.com/01b0e38aa4b6793fa3dd61b947af47b1
+
 # DB設計
 
 ## usersテーブル
